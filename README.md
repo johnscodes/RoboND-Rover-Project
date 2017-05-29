@@ -1,11 +1,17 @@
 ### Original Read Me is below.
-## Unzip the file johnsRover for raw img and csv file of my rover
-## Changes Made to Rover_Project_Test_Notebook
+Unzip the file johnsRover for raw img and csv file of my rover
+The Project was run with the following specs:
+
+Screen Resolution: 1280 x 800
+Graphics Quality: Beautiful
+
+### Changes Made to Rover_Project_Test_Notebook
 Under the section titled Quick Look at the Data, the path was changed to '../johnsRover/IMG/*' to point to the raw data files
 
 The Input section of Read in saved data and ground truth map of the world was changed so that 
 line 4 reads df=pd.read_csv('../johnsRover/robot_log.csv')
 
+<hr>
 
 [//]: # (Image References)
 [image_0]: ./misc/rover_image.jpg
