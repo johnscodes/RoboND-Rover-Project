@@ -3,6 +3,7 @@ Unzip the file johnsRover for raw img and csv file of my rover
 The Project was run with the following specs:
 
 Screen Resolution: 1280 x 800
+
 Graphics Quality: Beautiful
 
 ### Changes Made to Rover_Project_Test_Notebook
