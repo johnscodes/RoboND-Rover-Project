@@ -76,8 +76,8 @@ def rotate_pix(xpix, ypix, yaw):
 def translate_pix(xpix_rot, ypix_rot, xpos, ypos, scale):
     # TODO:
     # Apply a scaling and a translation
-    xpix_translated = (xpix_rot / scale) + xpos
-    ypix_translated = (ypix_rot / scale) + ypos
+    xpix_translated = ((xpix_rot / scale) + xpos)
+    ypix_translated = ((ypix_rot / scale) + ypos)
     # Return the result
     return xpix_translated, ypix_translated
 
@@ -121,7 +121,7 @@ def perception_step(Rover):
                       [image.shape[1]/2 - dst_size, image.shape[0] - 2*dst_size - bottom_offset],
                       ])
     # 2) Apply perspective transform
-    warped = perspect_transform(img, source, destination)
+    warped = perspect_transform(Rover.img, source, destination)
 
     # 3) Apply color threshold to identify navigable terrain/obstacles/rock samples
     threshold_terrain = color_thresh(warped)
@@ -154,9 +154,9 @@ def perception_step(Rover):
         # Example: Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
         #          Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
         #          Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 1
-    data.worldmap[obstacle_y_world, obstacle_x_world, :] = 255
-    data.worldmap[rock_y_world, rock_x_world, :] = 255
-    data.worldmap[navigable_y_world, navigable_x_world, :] = 255
+    data.worldmap[obstacle_y_world, obstacle_x_world, 0] = 255
+    data.worldmap[rock_y_world, rock_x_world, 1] = 255
+    data.worldmap[navigable_y_world, navigable_x_world, 2] = 255
 
     # 8) Convert rover-centric pixel positions to polar coordinates
     # Update Rover pixel distances and angles
