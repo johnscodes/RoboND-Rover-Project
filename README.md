@@ -4,7 +4,7 @@ The Project was run with the following specs:
 
 Screen Resolution: 1280 x 800
 
-Graphics Quality: Beautiful
+Graphics Quality: Good
 
 ### Changes Made to Rover_Project_Test_Notebook
 Under the section titled Quick Look at the Data, the path was changed to '../johnsRover/IMG/*' to point to the raw data files
