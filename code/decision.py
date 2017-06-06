@@ -1,4 +1,3 @@
-
 import numpy as np
 
 
@@ -22,6 +21,8 @@ def decision_step(Rover):
                 if Rover.vel < Rover.max_vel:
                     # Set throttle value to throttle setting
                     Rover.throttle = Rover.throttle_set
+                if Rover.near_sample == True:
+                        Rover.brake = 1
                 else: # Else coast
                     Rover.throttle = 0
                 Rover.brake = 0
