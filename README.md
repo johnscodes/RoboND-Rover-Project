@@ -1,11 +1,15 @@
-### Original Read Me is below.
-Unzip the file johnsRover for raw img and csv file of my rover
+### Write up Report
+If you want to see my "test data", unzip the file johnsRover for raw img and csv file of my rover
+
 The Project was run with the following specs:
 
 Screen Resolution: 1280 x 800
 
 Graphics Quality: Good
 
+
+
+### Original Read Me
 ### Changes Made to Rover_Project_Test_Notebook
 Under the section titled Quick Look at the Data, the path was changed to '../johnsRover/IMG/*' to point to the raw data files
 
