@@ -1,7 +1,7 @@
 ### Write up Report
 If you want to see my "test data", unzip the file johnsRover for raw img and csv file of my rover
 
-The test ouput video can be found in the folder titled test output.
+The test ouput video can be found in the folder titled output.
 
 Navigate to the code folder and you will find:
 
