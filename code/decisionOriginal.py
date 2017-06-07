@@ -12,29 +12,13 @@ def decision_step(Rover):
     # Example:
     # Check if we have vision data to make decisions with
     if Rover.nav_angles is not None:
-        # check for rocks
-        if Rover.rock_angles is not None and len(Rover.rock_angles)>0:
-            Rover.steer = np.clip(np.mean(Rover.rock_angles * 180/np.pi), -15, 15)
-            if not Rover.near_sample:
-                Rover.throttle = 0.35
-                Rover.brake = 0
-            else:
-                Rover.throttle = 0
-                Rover.brake = Rover.brake_set
         # Check for Rover.mode status
-        elif Rover.mode == 'forward':
+        if Rover.mode == 'forward':
             # Check the extent of navigable terrain
             if len(Rover.nav_angles) >= Rover.stop_forward:
                 # If mode is forward, navigable terrain looks good
                 # and velocity is below max, then throttle
-                # if Rover.stop_forward == 100:
-                # Rover.vel tried  1, 0.5, 0.1
-                if Rover.vel <0.01 and Rover.throttle != 0:
-                    # Rover.brake = 0
-                    # Rover.throttle = 1
-                    # Rover.steer = 15
-                    Rover.mode = 'stuck'
-                elif Rover.vel < Rover.max_vel:
+                if Rover.vel < Rover.max_vel:
                     # Set throttle value to throttle setting
                     Rover.throttle = Rover.throttle_set
                 else: # Else coast
@@ -50,12 +34,7 @@ def decision_step(Rover):
                     Rover.brake = Rover.brake_set
                     Rover.steer = 0
                     Rover.mode = 'stop'
-        elif Rover.mode == 'stuck':
-            # tried -1 for throttle but depending on spawn, it would go backwards
-            Rover.throttle = 1
-            Rover.brake = 0
-            Rover.steer = 0
-            Rover.mode = 'forward'
+
         # If we're already in "stop" mode then make different decisions
         elif Rover.mode == 'stop':
             # If we're in stop mode but still moving keep braking
