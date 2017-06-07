@@ -54,7 +54,7 @@ def decision_step(Rover):
             # tried -1 for throttle but depending on spawn, it would go backwards
             Rover.throttle = 1
             Rover.brake = 0
-            Rover.steer = 0
+            Rover.steer = 15
             Rover.mode = 'forward'
         # If we're already in "stop" mode then make different decisions
         elif Rover.mode == 'stop':
