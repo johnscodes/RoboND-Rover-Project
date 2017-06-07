@@ -1,13 +1,21 @@
 ### Write up Report
 If you want to see my "test data", unzip the file johnsRover for raw img and csv file of my rover
 
+The test ouput video can be found in the folder titled test output.
+
+Navigate to the code folder and you will find:
+
+    Rover_Project_Test_Notebook.ipynb (Jupyter Notebook with test code)
+    drive_rover.py;
+    supporting_functions.py; 
+    decision.py and; 
+    perception.py.
+
 The Project was run with the following specs:
 
 Screen Resolution: 1280 x 800
 
 Graphics Quality: Good
-
-
 
 ### Original Read Me
 ### Changes Made to Rover_Project_Test_Notebook
