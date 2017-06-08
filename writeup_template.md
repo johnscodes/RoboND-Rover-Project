@@ -25,6 +25,8 @@
 [image1]: ./misc/rover_image.jpg
 [image2]: ./calibration_images/example_grid1.jpg
 [image3]: ./calibration_images/example_rock1.jpg 
+[image4]: ./output/test_mapping.png 
+
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -37,15 +39,22 @@
 You're reading it!
 
 ### Notebook Analysis
-#### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
+#### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples. 
+
+## (Done.  Check file called Rover_Project_Test_Notebook.ipynb located in the code folder)
 Here is an example of how to include an image in your writeup.
 
 ![alt text][image1]
 
-#### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
-And another! 
+#### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  
+## (Done.  Check file called Rover_Project_Test_Notebook.ipynb located in the code folder)
 
-![alt text][image2]
+Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
+And another! 
+## (Done.  The video is located in the output folder and titled test_mapping.mp4  Below is a screenshot of that video)
+
+![alt text][image4]
+
 ### Autonomous Navigation and Mapping
 
 #### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
