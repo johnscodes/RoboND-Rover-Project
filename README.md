@@ -17,6 +17,12 @@ Screen Resolution: 1280 x 800
 
 Graphics Quality: Good
 
+All code has been updated to the newest code.
+
+The newest Rover Sim was utilized as well to test this code.
+
+The code has been tested on a Mac, Windows and Linux(Virtual Machine) and confirmed to be working.
+
 ### Original Read Me
 ### Changes Made to Rover_Project_Test_Notebook
 Under the section titled Quick Look at the Data, the path was changed to '../johnsRover/IMG/*' to point to the raw data files
