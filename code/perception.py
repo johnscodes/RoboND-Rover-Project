@@ -1,3 +1,4 @@
+
 import numpy as np
 import cv2
 
@@ -150,9 +151,9 @@ def perception_step(Rover):
         # Example: Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
         #          Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
         #          Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 1
-    Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 255
-    Rover.worldmap[rock_y_world, rock_x_world, 1] += 255
-    Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 255
+    Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] = 255
+    Rover.worldmap[rock_y_world, rock_x_world, :] = 255
+    Rover.worldmap[navigable_y_world, navigable_x_world, 2] = 255
 
     # 8) Convert rover-centric pixel positions to polar coordinates
     # Update Rover pixel distances and angles
