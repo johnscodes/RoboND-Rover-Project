@@ -190,53 +190,57 @@ Perspective transform and color threshold can be switched. 
 Color threshold was applied to the picture to convert the image from a color image (3 tuple) to a single-channel binary image, where each pixel is set to one or zero.  Any pixel above the threshold is assigned a value of 1 while those below are assigned a value of 0. 
 The color thresholded image is the navigable terrain in from of the rover. 
  
-Rover-Centric Coordinates – Pixel position of the white pixels were extracted and transformed where the rover camera is at (x,y) = (0,0).  Then we switch the coordinates from y, x to x,y. 
+ 
+ ![alt text][image8]
+ 
+ 
+Rover-Centric Coordinates – 
+
+Pixel position of the white pixels were extracted and transformed where the rover camera is at (x,y) = (0,0).  
+
+The coordinates were switched from y, x to x,y. 
+
 Yaw angle is at zero when the rover is at x, y = 0,0
+
 Yaw angle is measured counterclockwise.
 
-rotation is to account for the fact that the camera may take a picture  that can be pointing in any direction via its yaw angle (rotate to make sure x,y are parallel to the axes..  Translation help to account for the rover may be located at any position when it takes a picture (translate rotated position by the x and y position).  The 
-yaw_rad = yaw * np.pi / 180
-x_rotated = xpix * np.cos(yaw_rad) - ypix * np.sin(yaw_rad)
-y_rotated = xpix * np.sin(yaw_rad) + ypix * np.cos(yaw_rad)
+Rotation is to account for the fact that the camera may take a picture that can be pointing in any direction via its yaw angle (rotate to make sure x,y are parallel to the axes.  Translation help to account for the rover may be located at any position when it takes a picture (translate rotated position by the x and y position).  The 
+
+    yaw_rad = yaw * np.pi / 180
+
+    x_rotated = xpix * np.cos(yaw_rad) - ypix * np.sin(yaw_rad)
+    
+    y_rotated = xpix * np.sin(yaw_rad) + ypix * np.cos(yaw_rad)
 
 A rotation matrix is applied to the rover space pixel value.
 
-Then a translation is performed by adding the x and y components.  
+A translation is performed by adding the x and y components.  
 
 The components are divided by 10 to scale it down to give us world coordinates.  
 
 The values are truncated to be within the range of the map.
  
 The perspective transform transforms the Rover image to a top down perspective.
+
 First we took an image with a grid from the Rover’s camera while in the Rover simulator. 
+
 We loaded the image into Jupyter notebook and plotted the image so the pixel’s coordinates could be retrieved. 
  
 Using the grid, the four corners of a grid is identified to define what one square meter looks like on the ground.
  
 The function cv2.GetPerspectiveTransform was used to calculate the perspective transform matrix m.
+
 The matrix M was applied to the warped function to generate a warped image.
+
 Source, is the source points of the four corners on the grid of the original image that marked the four corners.  The destination points that are defined is the location of where the source points should be moving in the final image.  When the code is run, the image (birds eye) is presented with a top down view of the world
+
 Notes:  The perspective transformation requires a 3x3 transformation matrix.  Straight lines will remain straight even after the transformation.  This process requires 4 points on the input image with corresponding points on the output image.    The perspective transformation is performed by the function cv2.getPerspectiveTransform then applying cv2.warpPerspective.
 Perspective transform and color threshold can be switched. 
- 
-Color threshold was applied to the picture to convert the image from a color image (3 tuple) to a single-channel binary image, where each pixel is set to one or zero.  Any pixel above the threshold is assigned a value of 1 while those below are assigned a value of 0. 
-The color thresholded image is the navigable terrain in from of the rover. 
- 
-Rover-Centric Coordinates – Pixel position of the white pixels were extracted and transformed where the rover camera is at (x,y) = (0,0).  Then we switch the coordinates from y, x to x,y. 
-Yaw angle is at zero when the rover is at x, y = 0,0
-Yaw angle is measured counterclockwise.
- 
- 
-Improvements:
-One improvement would be to address the challenge of mapping in uneven terrain.  In the real world, the ground rises and dips.  Currently, the mapping in this project only addresses the pixel in the ground plane. 
- 
-Another improvement would be to add a function that records the coordinates of the starting point and tracks where the rover has been.  This can be used to prevent the rover from retracing its steps and to ensure that in a larger environment, the rover can not only map the whole map but additional functionality can be added in to prevent the rover from looping.  
-
-
-
-
-
+  
 We convert x and y pixel positions to polar coordinates to determine the navigable terrain.  Each pixel is represented by the distance form the origin and angle counterclockwise.    Because the direction(angle) represents the average angle of all navigable terrain pixels in the rover’s field of view is roughly 0.7 radians in the plot above.  We convert degrees and clip to the range of +/-15 for steering.
+
+
+![alt text][image9]
 
 
 Improvements:
