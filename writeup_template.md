@@ -255,3 +255,6 @@ Another improvement would be to add a function that records the coordinates of t
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
 The functions and examples provided above is the approach that I took.  I am pursuing this project further using real cameras and sensors to apply it in real life.  I will try utilizing different sensors to find a solution to the problem of reading lane markers that are wet to simulate rainy conditions when it will be harder for the vehicle to see the markers and faded out lane markers to simulate construction zone areas where there are many markers on the ground that make it difficult for the vehicle to read the marker.
+
+
+There are many weaknesses to the code written.  It is a solid foundation to start from, but something that needs a lot more to be built upon.  The way the code is written right now, it would not be able to handle hills.  There would need to be a sensor that adjusts the camera to compensate for incline and decline.  
