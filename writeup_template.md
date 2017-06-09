@@ -246,6 +246,7 @@ We convert x and y pixel positions to polar coordinates to determine the navigab
 Improvements:
 One improvement would be to address the challenge of mapping in uneven terrain.  In the real world, the ground rises and dips.  Currently, the mapping in this project only addresses the pixel in the ground plane. 
  
+
 Another improvement would be to add a function that records the coordinates of the starting point and tracks where the rover has been.  This can be used to prevent the rover from retracing its steps and to ensure that in a larger environment, the rover can not only map the whole map but additional functionality can be added in to prevent the rover from looping.  
 
 
