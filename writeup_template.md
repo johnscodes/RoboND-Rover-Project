@@ -26,7 +26,15 @@
 [image2]: ./calibration_images/example_grid1.jpg
 [image3]: ./calibration_images/example_rock1.jpg 
 [image4]: ./output/test_mapping.png 
-
+[image6]: ./output/image6.png
+[image4]: ./output/test_mapping.png 
+[image4]: ./output/test_mapping.png 
+[image4]: ./output/test_mapping.png 
+[image4]: ./output/test_mapping.png 
+[image4]: ./output/test_mapping.png 
+[image4]: ./output/test_mapping.png 
+[image4]: ./output/test_mapping.png 
+[image4]: ./output/test_mapping.png 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -163,6 +171,7 @@ The image was loaded into Jupyter notebook and plotted the image so the pixel’
  
 Using the grid, the four corners of a grid is identified to define what one square meter looks like on the ground.
 
+![alt text][image6]
 
 The function cv2.GetPerspectiveTransform was used to calculate the perspective transform matrix m.
 The matrix M was applied to the warped function to generate a warped image.
