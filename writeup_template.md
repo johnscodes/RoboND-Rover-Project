@@ -27,14 +27,14 @@
 [image3]: ./calibration_images/example_rock1.jpg 
 [image4]: ./output/test_mapping.png 
 [image6]: ./output/image6.png
-[image4]: ./output/test_mapping.png 
-[image4]: ./output/test_mapping.png 
-[image4]: ./output/test_mapping.png 
-[image4]: ./output/test_mapping.png 
-[image4]: ./output/test_mapping.png 
-[image4]: ./output/test_mapping.png 
-[image4]: ./output/test_mapping.png 
-[image4]: ./output/test_mapping.png 
+[image7]: ./output/image7.png 
+[image8]: ./output/image8.png 
+[image9]: ./output/image9.png 
+[image10]: ./output/image10.png 
+[image11]: ./output/image11.png 
+[image12]: ./output/image12.png 
+[image13]: ./output/image13.png 
+[image14]: ./output/image14.png 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -171,14 +171,22 @@ The image was loaded into Jupyter notebook and plotted the image so the pixel’
  
 Using the grid, the four corners of a grid is identified to define what one square meter looks like on the ground.
 
+
 ![alt text][image6]
 
+
 The function cv2.GetPerspectiveTransform was used to calculate the perspective transform matrix m.
+
 The matrix M was applied to the warped function to generate a warped image.
+
 Source, is the source points of the four corners on the grid of the original image that marked the four corners.  The destination points that are defined is the location of where the source points should be moving in the final image.  When the code is run, the image (birds eye) is presented with a top down view of the world
+
 Notes:  The perspective transformation requires a 3x3 transformation matrix.  Straight lines will remain straight even after the transformation.  This process requires 4 points on the input image with corresponding points on the output image.    The perspective transformation is performed by the function cv2.getPerspectiveTransform then applying cv2.warpPerspective.
 Perspective transform and color threshold can be switched. 
  
+ ![alt text][image7]
+ 
+ 
 Color threshold was applied to the picture to convert the image from a color image (3 tuple) to a single-channel binary image, where each pixel is set to one or zero.  Any pixel above the threshold is assigned a value of 1 while those below are assigned a value of 0. 
 The color thresholded image is the navigable terrain in from of the rover. 
  
